@@ -11,16 +11,15 @@ Is there a way to use machine learning and image recognition to standardize the 
 <p>
 First, a few considerations to make:
 <ol>
-  <li>Types of holds: from the ground, a sloper may resemble a jug: however, a climb of jugs will be significantly easier.
-  </li>
   <li>Height of wall: a 20-foot wall will be significantly easier for most climbers than a 60-foot wall.
-  </li>
-  <li>Steepness: an overhang will be treated differently than a slab wall for most climbers.
   </li>
   <li>Subjectivity: in order to create a target variable, one gym will have to be assumed to have the "correct" grading schema.
   </li>
   <li>Population: photos of routes will have to be taken over a long period of time, as most gyms do not have hundreds of routes up at once. 
   </li>
-  <li>Format of photos: must include entire wall, must not show dangling rope, no climbers on wall, must be able to distinguish different colours of holds as different routes.
+  <li>Format of photos: must include entire wall, must be able to distinguish different colours of holds as different routes.
   </li>
 </ol>
+<p>
+The most blatant issue here will be distinguishing different routes on the same wall. In this sense, the same image may be given 2 or more separate labels, since it will show multiple routes. As a result, we take a 2-model approach: the first, a way to discern between individual routes given color as an input. Once a route has been determined, we aim to predict its grade.
+
